@@ -2,7 +2,6 @@
 using namespace std;
 
 int nota1, nota2, nota3;
-int mediaMaioresNotas;
 
 int media(int nota1, int nota2, int nota3){
 	int nota= (nota1+nota2+nota3)/3;
@@ -26,21 +25,24 @@ int notaMenor(int nota1, int nota2, int nota3){
 		return nota3;
 	}
 }
+float mediaMaioresNotas(float nota1, float nota2, float nota3){
+	float mediaMaiores = (nota1 + nota2 + nota3 - notaMenor(nota1, nota2, nota3))/2;
+	return mediaMaiores;
+}
 
 int main(){
 	setlocale(LC_ALL,"Portuguese");
 
-	mediaMaioresNotas = (nota1 + nota2 + nota3 - notaMenor(nota1, nota2, nota3))/2;
 	cout<< "Digite sua primeira nota:\n";
 	cin >> nota1;
 	cout<< "Digite sua segunda nota:\n";
 	cin >> nota2;
 	cout<< "Digite sua terceira nota:\n";
 	cin >> nota3;
-	cout<< "A média de notas é: " << media(nota1, nota2, nota3) << endl;
-	cout<< "A média das duas maiores notas é: " << mediaMaioresNotas << endl;
-	cout<< "A maior nota é: " << notaMaior(nota1, nota2, nota3) << endl;
-	cout<< "A menor nota é: " << notaMenor(nota1, nota2, nota3) << endl;
+	cout<< "A mÃ©dia de notas Ã©: " << media(nota1, nota2, nota3) << endl;
+	cout<< "A mÃ©dia das duas maiores notas Ã©: " << mediaMaioresNotas (nota1, nota2, nota3) << endl;
+	cout<< "A maior nota Ã©: " << notaMaior(nota1, nota2, nota3) << endl;
+	cout<< "A menor nota Ã©: " << notaMenor(nota1, nota2, nota3) << endl;
 	return 0;
 	
 	
